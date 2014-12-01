@@ -1,0 +1,6 @@
+{
+  "fonts_bootstrap" : "bower_components/bootstrap/dist/fonts",
+  "fonts_awesome" : "bower_components/font-awesome/fonts",
+  "src" : "app",
+  "dist" : "dist"
+}
