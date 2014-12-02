@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" >
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" >
-  <link rel="stylesheet" href="../bower_components/bootstrap-social/bootstrap-social.css" >
+  <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" >
   <link rel="stylesheet" href="css/browsehappy.css">
   <link rel="stylesheet" href="css/bootstrap.docs.min.css">
   <link rel="stylesheet" href="css/app.css">
@@ -49,21 +49,23 @@
 			<div class="col-md-12" role="main" >
 				<div class="bs-docs-section">
 
-
           <div class="row">
             <div class="col-sm-12">
+
+              <div id="log" ></div>
+
               <div class="panel panel-default" >
                 <div class="panel-body">
-                    <button type="reset" class="btn btn-success btn-lg" >
+                    <button id="backward" type="text" class="btn btn-success btn-lg" >
                       <i class="fa fa-fast-backward"></i>
                     </button>
-                    <button type="reset" class="btn btn-success btn-lg" >
+                    <button id="play" type="text" class="btn btn-success btn-lg" >
                       <i class="fa fa-play"></i>
                     </button>
-                    <button type="reset" class="btn btn-success btn-lg" >
+                    <button id="stop" type="text" class="btn btn-success btn-lg" >
                       <i class="fa fa-stop"></i>
                     </button>
-                    <button type="reset" class="btn btn-success btn-lg" >
+                    <button id="forward" type="text" class="btn btn-success btn-lg" >
                       <i class="fa fa-fast-forward"></i>
                     </button>
                 </div>
@@ -71,9 +73,11 @@
             </div>
           </div>
 
+          <!--
           <div class="page-header" style="">
             <h1>PlayList</h1>
           </div>
+          -->
 
 				</div>
 			</div>
@@ -91,6 +95,7 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/nprogress/nprogress.js"></script>
   <script src="js/app.js"></script>
   <!-- endbuild -->
 </body>

@@ -1,7 +1,7 @@
 {
-  "name": "WebManager",
+  "name": "VLC-Control-Web",
   "version": "0.1.0",
-  "description": "Play Ideia!",
+  "description": "Control your VCL Files on Mobile!",
   "main": "app/index.html",
   "author": "emalherbi",
   "license": "MIT",
