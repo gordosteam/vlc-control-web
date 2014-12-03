@@ -1,55 +1,5 @@
-/* app js */
-
-/*
-* only for test    *
-* vlc-control-node *
-
-var VLCServer = {
-
-  url : "http://192.168.1.4:8124/",
-
-  request : function( call, data ) {
-    NProgress.start();
-
-    $.ajax({
-      url: this.url,
-      dataType: "jsonp",
-      jsonpCallback: call,
-      data : data,
-      cache: false,
-      timeout: 5000,
-      success: function(data) {
-        NProgress.done();
-
-        var r = jQuery.parseJSON( data );
-        $('#log').html( r.msg );
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        NProgress.done();
-
-        alert('error ' + textStatus + " " + errorThrown);
-      }
-    });
-  }
-}
-
-var VLC = {
-  backward : function() {
-    VLCServer.request( 'backward' );
-  },
-  play : function() {
-    VLCServer.request( 'play' );
-  },
-  stop : function() {
-    VLCServer.request( 'stop' );
-  },
-  forward : function() {
-    VLCServer.request( 'forward' );
-  },
-  volume : function( val ) {
-    VLCServer.request( 'setVolume', 'volume=' + val );
-  }
-}
+/**
+* @author emalherbi
 */
 
 /* vlc-control-io */
@@ -59,16 +9,16 @@ var socketIO = {
 
   create : function() {
 
-    this.socket = io('192.168.1.103:3500');
-	
-	var that = this.socket;
-    this.socket.on('conectado', function(msg) {    	
+    this.socket = io('192.168.1.4:3500');
+
+	  var that = this.socket;
+    this.socket.on('conectado', function(msg) {
       that.emit('cfg', {
-        ip : '192.168.1.103',
+        ip : '192.168.1.4',
         port : 8080,
         user : '',
         password : 'asd123',
-        pathImgs: 'c:\\xampp\\htdocs\\vlc-control-web\\app\\public\\imgs\\'
+        pathImgs: '' // 'c:\\xampp\\htdocs\\vlc-control-web\\app\\public\\imgs\\'
       });
     });
 
@@ -113,23 +63,17 @@ $(function() {
   socketIO.create();
   $('#backward').click(function() {
     socketIO.command( 'previous' );
-    // VLC.backward();
   });
   $('#play').click(function() {
     socketIO.command( 'play' );
-    // VLC.play();
   });
   $('#stop').click(function() {
     socketIO.command( 'stop' );
-    // VLC.stop();
   });
   $('#forward').click(function() {
     socketIO.command( 'next' );
-    // VLC.forward();
   });
   $('#volume').click(function() {
     socketIO.command( 'play' );
-    // VLC.volume( 100 );
   });
-
 });
