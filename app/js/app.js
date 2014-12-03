@@ -1,15 +1,21 @@
 /* app js */
 var VLCServer = {
 
-  url : "http://192.168.1.7:8124/",
+  url : "http://192.168.1.4:8124/",
 
-  request : function( call ) {
+  request : function( call, data ) {
+    //var jsonpCallback = call;
+    //if ( typeof params != 'undefined' ) {
+    //  jsonpCallback += params;
+    //}
+
     NProgress.start();
 
     $.ajax({
       url: this.url,
       dataType: "jsonp",
       jsonpCallback: call,
+      data : data,
       cache: false,
       timeout: 5000,
       success: function(data) {
@@ -39,11 +45,20 @@ var VLC = {
   },
   forward : function() {
     VLCServer.request( 'forward' );
+  },
+  volume : function( val ) {
+    VLCServer.request( 'setVolume', 'volume=' + val );
   }
 }
 
 $(function() {
   console.log( "ready!" );
+
+  $('#slider').slider({
+    formatter: function(value) {
+      return value;
+    }
+  });
 
   $('#backward').click(function() {
     VLC.backward();
@@ -56,6 +71,9 @@ $(function() {
   });
   $('#forward').click(function() {
     VLC.forward();
+  });
+  $('#volume').click(function() {
+    VLC.volume( 100 );
   });
 
 });

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" >
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" >
   <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" >
+  <link rel="stylesheet" href="../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" >
   <link rel="stylesheet" href="css/browsehappy.css">
   <link rel="stylesheet" href="css/bootstrap.docs.min.css">
   <link rel="stylesheet" href="css/app.css">
@@ -38,8 +39,8 @@
   <!-- TITLE -->
   <div class="bs-docs-header" >
   	<div class="container">
-  		<h1 class="title" ><img class="profile-img" src="img/logo.png" alt="" ></h1>
-  		<p class="sub-title" >Control your VCL Files on Mobile.</p>
+  		<h1><img class="profile-img" src="img/logo.png" alt="" ></h1>
+  		<p>Control your VCL Files on Mobile.</p>
   	</div>
   </div>
 
@@ -54,25 +55,44 @@
 
               <div id="log" ></div>
 
-              <div class="panel panel-default" >
+              <div class="panel panel-default" style="text-align: center;" >
                 <div class="panel-body">
-                    <button id="backward" type="text" class="btn btn-success btn-lg" >
+                    <button id="backward" type="text" class="btn btn-danger btn-xlarge" >
                       <i class="fa fa-fast-backward"></i>
                     </button>
-                    <button id="play" type="text" class="btn btn-success btn-lg" >
+                    <button id="play" type="text" class="btn btn-success btn-xlarge" >
                       <i class="fa fa-play"></i>
                     </button>
-                    <button id="stop" type="text" class="btn btn-success btn-lg" >
+                    <button id="stop" type="text" class="btn btn-warning btn-xlarge" >
                       <i class="fa fa-stop"></i>
                     </button>
-                    <button id="forward" type="text" class="btn btn-success btn-lg" >
+                    <button id="forward" type="text" class="btn btn-danger btn-xlarge" >
                       <i class="fa fa-fast-forward"></i>
                     </button>
                 </div>
               </div>
+
             </div>
           </div>
 
+          <div class="panel panel-default" style="text-align: center;" >
+            <div class="panel-body">
+
+              <div class="row" style="text-align: center; margin-bottom: 12px;" >
+                <div class="col-sm-12">
+                  <input id="slider" data-slider-id='slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="100"/>
+                </div>
+              </div>
+              <div class="row" style="text-align: center;" >
+                <div class="col-sm-12">
+                  <button id="volume" type="text" class="btn btn-success btn-lg" >
+                    <i class="fa fa-volume-up"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
           <!--
           <div class="page-header" style="">
             <h1>PlayList</h1>
@@ -96,6 +116,7 @@
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../bower_components/nprogress/nprogress.js"></script>
+  <script src="../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
   <script src="js/app.js"></script>
   <!-- endbuild -->
 </body>
