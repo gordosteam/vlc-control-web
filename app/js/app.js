@@ -1,14 +1,14 @@
 /* app js */
+
+/*
+* only for test    *
+* vlc-control-node *
+
 var VLCServer = {
 
   url : "http://192.168.1.4:8124/",
 
   request : function( call, data ) {
-    //var jsonpCallback = call;
-    //if ( typeof params != 'undefined' ) {
-    //  jsonpCallback += params;
-    //}
-
     NProgress.start();
 
     $.ajax({
@@ -50,6 +50,54 @@ var VLC = {
     VLCServer.request( 'setVolume', 'volume=' + val );
   }
 }
+*/
+
+/* vlc-control-io */
+var socketIO = {
+
+  socket : null,
+
+  create : function() {
+
+    this.socket = io('192.168.1.131:3500');
+
+    this.socket.on('conectado', function(msg) {
+      this.socket.emit('cfg', {
+        ip : '192.168.1.131',
+        port : 8080,
+        user : '',
+        password : 'asd123'
+      });
+    });
+
+    this.socket.on('fault', function(msg) {
+      alert( msg );
+    });
+
+    this.socket.on('sucess', function(msg) {
+      console.log( msg );
+
+      $('#info').text(msg);
+
+      var obj = JSON.parse(msg);
+
+      if ((obj) && (obj.information) && (obj.information.category) && (obj.information.category.meta) && (obj.information.category.meta.artwork_url)) {
+        $('#img').attr("src", obj.information.category.meta.artwork_url);
+        $('#artist').text('Artist: ' +obj.information.category.meta.artist);
+        $('#music').text('Music: ' + obj.information.category.meta.filename);
+      } else {
+        $('#artist').text('');
+        $('#music').text('');
+        $('#img').attr("src", '');
+      }
+    });
+  },
+  command : function( command ) {
+    this.socket.emit('command', {
+      command : command
+    });
+  }
+}
 
 $(function() {
   console.log( "ready!" );
@@ -60,20 +108,26 @@ $(function() {
     }
   });
 
+  socketIO.create();
   $('#backward').click(function() {
-    VLC.backward();
+    socketIO.command( 'previous' );
+    // VLC.backward();
   });
   $('#play').click(function() {
-    VLC.play();
+    socketIO.command( 'play' );
+    // VLC.play();
   });
   $('#stop').click(function() {
-    VLC.stop();
+    socketIO.command( 'stop' );
+    // VLC.stop();
   });
   $('#forward').click(function() {
-    VLC.forward();
+    socketIO.command( 'next' );
+    // VLC.forward();
   });
   $('#volume').click(function() {
-    VLC.volume( 100 );
+    socketIO.command( 'play' );
+    // VLC.volume( 100 );
   });
 
 });

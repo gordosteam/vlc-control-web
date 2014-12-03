@@ -5,10 +5,9 @@
 .bs-docs-header h1, .bs-docs-header p {
   margin-right: 0;
 }
-
 .btn-xlarge {
   padding: 18px 28px;
-  font-size: 22px; //change this to your desired size
+  font-size: 22px; 
   line-height: normal;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
