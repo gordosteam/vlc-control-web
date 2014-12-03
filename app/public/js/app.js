@@ -59,14 +59,16 @@ var socketIO = {
 
   create : function() {
 
-    this.socket = io('192.168.1.131:3500');
-
-    this.socket.on('conectado', function(msg) {
-      this.socket.emit('cfg', {
-        ip : '192.168.1.131',
+    this.socket = io('192.168.1.103:3500');
+	
+	var that = this.socket;
+    this.socket.on('conectado', function(msg) {    	
+      that.emit('cfg', {
+        ip : '192.168.1.103',
         port : 8080,
         user : '',
-        password : 'asd123'
+        password : 'asd123',
+        pathImgs: 'c:\\xampp\\htdocs\\vlc-control-web\\app\\public\\imgs\\'
       });
     });
 
@@ -97,7 +99,7 @@ var socketIO = {
       command : command
     });
   }
-}
+};
 
 $(function() {
   console.log( "ready!" );

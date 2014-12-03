@@ -8,7 +8,8 @@
     "bootstrap": "~3.2.0",
     "nprogress": "~0.1.6",
     "seiyria-bootstrap-slider": "~4.3.0",
-    "font-awesome": "~4.2.0"
+    "font-awesome": "~4.2.0",
+    "socket.io-client": "~1.2.1"
   },
   "authors": [
     "emalherbi"

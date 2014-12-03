@@ -2,7 +2,7 @@
   "name": "VLC-Control-Web",
   "version": "0.1.0",
   "description": "Control your VCL Files on Mobile!",
-  "main": "app/index.html",
+  "main": "app/server.js",
   "author": "emalherbi",
   "license": "MIT",
   "devDependencies": {
@@ -20,5 +20,10 @@
     "grunt-notify": "^0.3.1",
     "grunt-rev": "^0.1.0",
     "grunt-usemin": "^2.3.0"
+  },
+  "dependencies": {
+    "vlc-control-node": "0.0.7",
+    "vlc-control-io": "0.0.1",
+    "express": "~4.10.4"
   }
 }
