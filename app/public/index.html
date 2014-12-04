@@ -7,11 +7,11 @@
   <title>WebManager</title>
 
   <!-- build:css css/app.min.css -->
-  <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
-  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" >
-  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" >
-  <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" >
-  <link rel="stylesheet" href="../bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" >
+  <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="bower_components/nprogress/nprogress.css" >
+  <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" >
   <link rel="stylesheet" href="css/browsehappy.css">
   <link rel="stylesheet" href="css/bootstrap.docs.min.css">
   <link rel="stylesheet" href="css/app.css">
@@ -50,40 +50,40 @@
 			<div class="col-md-12" role="main" >
 				<div class="bs-docs-section">
 
-          <div class="row">
-            <div class="col-sm-12">
 
-              <div id='info'></div></br>
-          		<div id='artist'></div></br>
-          		<div id='music'></div></br>
-          		<img id='img' src=""/></br>
+          <div class="page-header" style="text-align: center;" >
+            <h1 id='artist' > </h1>
+          </div>
 
-              <div class="panel panel-default" style="text-align: center;" >
-                <div class="panel-body">
-                    <button id="backward" type="text" class="btn btn-danger btn-xlarge" >
-                      <i class="fa fa-fast-backward"></i>
-                    </button>
-                    <button id="play" type="text" class="btn btn-success btn-xlarge" >
-                      <i class="fa fa-play"></i>
-                    </button>
-                    <button id="stop" type="text" class="btn btn-warning btn-xlarge" >
-                      <i class="fa fa-stop"></i>
-                    </button>
-                    <button id="forward" type="text" class="btn btn-danger btn-xlarge" >
-                      <i class="fa fa-fast-forward"></i>
-                    </button>
-                </div>
-              </div>
+          <div class="panel panel-default" style="text-align: center;" >
+            <div class="panel-body">
+              <h3 id="music"> </h3>
+              <img id='img' class="img-rounded" src="" alt="" style="width: 200px; height: 200px;" /></br>
             </div>
           </div>
 
           <div class="panel panel-default" style="text-align: center;" >
             <div class="panel-body">
-              <div class="row" style="text-align: center; margin-bottom: 12px;" >
+
+              <button id="backward" type="text" class="btn btn-danger btn-lg" >
+                <i class="fa fa-fast-backward"></i>
+              </button>
+              <button id="play" type="text" class="btn btn-success btn-lg" >
+                <i class="fa fa-play"></i>
+              </button>
+              <button id="stop" type="text" class="btn btn-warning btn-lg" >
+                <i class="fa fa-stop"></i>
+              </button>
+              <button id="forward" type="text" class="btn btn-danger btn-lg" >
+                <i class="fa fa-fast-forward"></i>
+              </button>
+
+              <div class="row" style="text-align: center; margin-bottom: 12px; margin-top: 12px;" >
                 <div class="col-sm-12">
                   <input id="slider" data-slider-id='slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="10" data-slider-value="100"/>
                 </div>
               </div>
+
               <div class="row" style="text-align: center;" >
                 <div class="col-sm-12">
                   <button id="volume" type="text" class="btn btn-success btn-lg" >
@@ -91,6 +91,7 @@
                   </button>
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -114,11 +115,11 @@
 
   <!-- build:js js/app.min.js -->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="../bower_components/nprogress/nprogress.js"></script>
-  <script src="../bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="../bower_components/socket.io-client/socket.io.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+  <script src="bower_components/socket.io-client/socket.io.js"></script>
   <script src="js/app.js"></script>
   <!-- endbuild -->
 </body>

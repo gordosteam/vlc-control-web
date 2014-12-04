@@ -1,6 +1,3 @@
-/**
- * @author Fernando
- */
 var express = require('express');
 var vlcControlIo = require('vlc-control-io');
 var app = express();

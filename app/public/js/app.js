@@ -1,7 +1,3 @@
-/**
-* @author emalherbi
-*/
-
 /* vlc-control-io */
 var socketIO = {
 
@@ -18,7 +14,7 @@ var socketIO = {
         port : 8080,
         user : '',
         password : 'asd123',
-        pathImgs: '' // 'c:\\xampp\\htdocs\\vlc-control-web\\app\\public\\imgs\\'
+        pathImgs: 'vlc-control-web/app/public/imgs/' // 'c:\\xampp\\htdocs\\vlc-control-web\\app\\public\\imgs\\'
       });
     });
 
@@ -27,10 +23,6 @@ var socketIO = {
     });
 
     this.socket.on('sucess', function(msg) {
-      console.log( msg );
-
-      $('#info').text(msg);
-
       var obj = JSON.parse(msg);
 
       if ((obj) && (obj.information) && (obj.information.category) && (obj.information.category.meta) && (obj.information.category.meta.artwork_url)) {
@@ -74,6 +66,6 @@ $(function() {
     socketIO.command( 'next' );
   });
   $('#volume').click(function() {
-    socketIO.command( 'play' );
+    // socketIO.command( 'play' );
   });
 });
