@@ -36,9 +36,10 @@ var socketIO = {
       }
     });
   },
-  command : function( command ) {
+  command : function( command, params ) {
     this.socket.emit('command', {
-      command : command
+      command : command,
+      params : params
     });
   }
 };
@@ -57,7 +58,9 @@ $(function() {
     socketIO.command( 'previous' );
   });
   $('#play').click(function() {
-    socketIO.command( 'play' );
+    socketIO.command( 'play', {
+      novideo : true
+    });
   });
   $('#stop').click(function() {
     socketIO.command( 'stop' );
